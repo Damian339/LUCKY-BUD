@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUCKY BUD</title>
@@ -471,8 +472,22 @@
  </style>
 </footer>
 
+<style>.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-
+.item {
+  flex: 1 1 300px; /* Minimalna szerokość 300px, dostosowuje się elastycznie */
+}
+</style>
+<style>.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+</style>
 
 
 
