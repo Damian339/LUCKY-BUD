@@ -279,24 +279,7 @@
 
 
     
-    <script>
-        const lightboxLinks = document.querySelectorAll('.lightbox');
-    
-        lightboxLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const imgSrc = this.getAttribute('href');
-                const overlay = document.createElement('div');
-                overlay.id = 'overlay';
-                overlay.innerHTML = `<div class="lightbox-image"><img src="${imgSrc}" alt=""><span id="close-btn">X</span></div>`;
-                document.body.appendChild(overlay);
-    
-                document.getElementById('close-btn').addEventListener('click', function() {
-                    document.body.removeChild(overlay);
-                });
-            });
-        });
-    </script>
+   
     
     <style>
         .gallery {
