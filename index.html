@@ -176,7 +176,7 @@
     <!-- Nagłówek -->
     <header>
         <div class="logo">
-            <img url="LUCKY BUD.png" alt="Logo">
+            <img url="LUCKY BUD.jpg" alt="Logo">
             <h1>LUCKY BUD</h1>
         </div>
         <nav>
@@ -299,22 +299,25 @@
     border-radius: 10px;
 }
 </style>
- <script>
+<script>
     const slider = document.getElementById('slider');
     const slides = document.querySelectorAll('.gallery-slide');
-    let currentIndex = 0;
-    const totalSlides = slides.length;
+    let currentIndex = 0; // Aktualny indeks slajdu
+    const totalSlides = slides.length; // Liczba wszystkich slajdów
 
-    // Funkcja do zmiany slajdu
+    // Funkcja zmieniająca slajd
     function showSlide(index) {
         slider.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    // Automatyczne przesuwanie co 3 sekundy
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
+    // Funkcja automatycznego przesuwania
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides; // Przechodzimy do następnego slajdu
         showSlide(currentIndex);
-    }, 3000);
+    }
+
+    // Automatyczne przewijanie co 3 sekundy
+    setInterval(nextSlide, 3000);
 </script>
 
 
@@ -341,7 +344,7 @@
                 <h3>Hydraulika</h3>
             </div>
             <div class="project">
-                <img scr="Glazurnik-1-1170x650.jpg alt"="Projekt 2">
+                <img scr="Glazurnik-1-1170x650.jpg" alt"="Projekt 2">
                 <h3>Glazurnika</h3>
             </div>
             <div class="project">
