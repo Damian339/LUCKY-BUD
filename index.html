@@ -260,6 +260,62 @@
 
 
 
+<div class="gallery-container">
+    <div class="gallery-slider" id="slider">
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+1" alt="Zdjęcie 1"></div>
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+2" alt="Zdjęcie 2"></div>
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+3" alt="Zdjęcie 3"></div>
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+4" alt="Zdjęcie 4"></div>
+    </div>
+</div>
+
+ <style>
+  /* Kontener galerii */
+.gallery-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Slider */
+.gallery-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Pojedynczy slajd */
+.gallery-slide {
+    min-width: 100%;
+}
+
+/* Obrazek w slajdzie */
+.gallery-slide img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+</style>
+ <script>
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.gallery-slide');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Funkcja do zmiany slajdu
+    function showSlide(index) {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Automatyczne przesuwanie co 3 sekundy
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }, 3000);
+</script>
 
 
 
