@@ -263,7 +263,63 @@
 
 
 
-
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Zdjęć z Przyciskiem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .gallery-container {
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .gallery-slide {
+            min-width: 100%;
+        }
+        .gallery-slide img {
+            width: 100%;
+            display: block;
+        }
+        .gallery-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .gallery-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .gallery-button.prev {
+            left: 10px;
+        }
+        .gallery-button.next {
+            right: 10px;
+        }
+    </style>
 
 
 
@@ -305,59 +361,39 @@
   
     </body>
 
+<script>
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.gallery-slide');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
 
+    let currentIndex = 0;
+    const totalSlides = slides.length;
 
+    // Funkcja do zmiany slajdu
+    function showSlide(index) {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    }
 
-    
-   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .gallery-container {
-            width: 80%;
-            max-width: 800px;
-            overflow: hidden;
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .gallery-slider {
-            display: flex;
-            width: 500%;
-            animation: slide 10s infinite linear;
-        }
-        .gallery-slide {
-            flex: 1 0 100%;
-        }
-        .gallery-slide img {
-            width: 100%;
-            display: block;
-        }
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            20% { transform: translateX(0); }
-            25% { transform: translateX(-100%); }
-            45% { transform: translateX(-100%); }
-            50% { transform: translateX(-200%); }
-            70% { transform: translateX(-200%); }
-            75% { transform: translateX(-300%); }
-            95% { transform: translateX(-300%); }
-            100% { transform: translateX(-400%); }
-        }
-    </style>
+    // Funkcja do przesuwania do następnego slajdu
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
 
+    // Funkcja do przesuwania do poprzedniego slajdu
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+    }
 
+    // Dodaj nasłuchiwacze na przyciski
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+
+    // Automatyczne przesuwanie co 3 sekundy
+    setInterval(nextSlide, 3000);
+</script>
 
 
 
