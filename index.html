@@ -263,7 +263,8 @@
 
 
 
- <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria Zdjęć z Przyciskiem</title>
     <style>
@@ -320,46 +321,19 @@
             right: 10px;
         }
     </style>
+</head>
+<body>
 
-
-
-
-
-
-
-
-
-
- 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Galeria</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>Galeria</h1>
-        </header>
-    
-       <div class="gallery-container">
+<div class="gallery-container">
     <div class="gallery-slider" id="slider">
-        <div class="gallery-slide"><img src="2e86878b-1553-4163-b7a0-10eda3bf2c09.JPG" alt="Zdjęcie 1"></div>
-        <div class="gallery-slide"><img src="4a83759a-8259-417c-9381-fd3379362e6d.JPG" alt="Zdjęcie 2"></div>
-        <div class="gallery-slide"><img src="663aa967-ea78-432c-9970-385de9b5e01e.JPG" alt="Zdjęcie 3"></div>
-        <div class="gallery-slide"><img src="6cf17ad7-b860-4266-93b4-61a2d1e10282.JPG" alt="Zdjęcie 4"></div>
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+1" alt="Zdjęcie 1"></div>
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+2" alt="Zdjęcie 2"></div>
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+3" alt="Zdjęcie 3"></div>
+        <div class="gallery-slide"><img src="https://via.placeholder.com/800x400?text=Zdjęcie+4" alt="Zdjęcie 4"></div>
     </div>
-    <div class="gallery-dots" id="dots">
-        <div class="gallery-dot" data-index="0"></div>
-        <div class="gallery-dot" data-index="1"></div>
-        <div class="gallery-dot" data-index="2"></div>
-        <div class="gallery-dot" data-index="3"></div>
-    </div>
+    <button class="gallery-button prev" id="prevButton">&lt;</button>
+    <button class="gallery-button next" id="nextButton">&gt;</button>
 </div>
-    
-        <script src="script.js"></script>
-  
-    </body>
 
 <script>
     const slider = document.getElementById('slider');
@@ -394,13 +368,6 @@
     // Automatyczne przesuwanie co 3 sekundy
     setInterval(nextSlide, 3000);
 </script>
-
-
-
-
-
-
-
 
 
 
