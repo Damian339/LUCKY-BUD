@@ -362,38 +362,7 @@
     <!-- Stopka -->
     <footer>
        
-  <!-- Sekcja kontaktowa -->
-  <section id="kontakt" class="contact">
-    <h2>Skontaktuj się z nami</h2>
-    <form>
-        <input type="text" name="name" placeholder="Imię i nazwisko" required>
-        <input type="email" name="email" placeholder="Twój e-mail" required>
-        <textarea name="message" rows="4" placeholder="Twoja wiadomość" required></textarea>
-        <button type="submit">Wyślij wiadomość</button>
-    </form>
-</section>
-<script src="script.js"></script>
-   
-<script>// Funkcja uruchamiająca się po kliknięciu w przycisk "Wyślij wiadomość"
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Zapobiega domyślnej akcji formularza (przeładowanie strony)
-        
-        // Pobieranie wartości z formularza
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let message = document.getElementById("message").value;
-    
-        // Warunki, by upewnić się, że wszystkie pola są wypełnione
-        if (name && email && message) {
-            alert(`Dziękujemy, ${name}! Twoja wiadomość została wysłana.`);
-        } else {
-            alert("Proszę wypełnić wszystkie pola.");
-        }
-    
-        // Opcjonalnie możesz wyczyścić formularz po wysłaniu
-        document.getElementById("contact-form").reset();
-    });
-    </script>
+
      </footer>
      <style>/* Sekcja kontaktowa */
      .contact {
